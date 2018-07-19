@@ -11,3 +11,6 @@ install: true
 
 notifications:
   email: false
+
+before_script:
+  - go get github.com/gorhill/cronexpr
