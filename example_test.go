@@ -44,7 +44,7 @@ func Example_basic() {
 	// Starts the job schedule. Job will run at it's next run time.
 	s.Start("jobName")
 
-	// For testing, wait untill the job has run before stopping all the jobs
+	// For testing, wait until the job has run before stopping all the jobs
 	<-chanStart
 
 	// Stop all the jobs and waits for then to all stop. In the below case it waits for at least a second.

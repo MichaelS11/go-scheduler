@@ -19,7 +19,7 @@ func NewScheduler() *Scheduler {
 func (s *Scheduler) Jobs() []string {
 	s.jobsRWMutex.RLock()
 	names := make([]string, 0, len(s.jobs))
-	for name, _ := range s.jobs {
+	for name := range s.jobs {
 		names = append(names, name)
 	}
 	s.jobsRWMutex.RUnlock()
@@ -38,7 +38,7 @@ func (s *Scheduler) StopAll() {
 	s.jobsRWMutex.RUnlock()
 }
 
-// StopAll stops all job from running again and waits till they have all stopped or the timeout duration has passed.
+// StopAllWait stops all job from running again and waits till they have all stopped or the timeout duration has passed.
 // Does not kill any running jobs.
 func (s *Scheduler) StopAllWait(timeout time.Duration) {
 	s.StopAll()

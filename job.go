@@ -65,7 +65,7 @@ func (s *Scheduler) Start(name string) error {
 }
 
 // Stop stops the job run schedule.
-// If the job is not running, it will not run again untill job is started.
+// If the job is not running, it will not run again until job is started.
 // If the job is running, the job will finish running then will not run again until the job is started.
 // Will not error if job is stopped more than once.
 func (s *Scheduler) Stop(name string) error {
