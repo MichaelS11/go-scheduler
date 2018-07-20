@@ -44,7 +44,7 @@ func main() {
 	// Starts the job schedule. Job will run at it's next run time.
 	s.Start("jobName")
 
-  // Wait a second to make sure job was run
+	// Wait a second to make sure job was run
 	time.Sleep(time.Second)
 
 	// Stop all the jobs and waits for then to all stop. In the below case it waits for at least a second.
