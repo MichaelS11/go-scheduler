@@ -11,6 +11,7 @@ import (
 
 // Make creates a new job.
 // Will error if job with same name is already created.
+// The scheduler uses UTC time
 func (s *Scheduler) Make(name string, cron string, function func(interface{}), data interface{}) error {
 	var err error
 

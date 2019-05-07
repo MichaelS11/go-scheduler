@@ -36,6 +36,7 @@ func main() {
 
 	// Make a new job that runs myFunction passing it "myData"
 	// A cron of * * * * * * * will run every second.
+	// The scheduler uses UTC time
 	err := s.Make("jobName", "* * * * * * *", myFunction, "myData")
 	if err != nil {
 		log.Fatalln("Make error:", err)
@@ -70,7 +71,7 @@ Seconds, Minutes, Hours, Day of month, Month, Day of week, Year
     Day of month   Yes          1-31              * / , - L W
     Month          Yes          1-12 or JAN-DEC   * / , -
     Day of week    Yes          0-6 or SUN-SAT    * / , - L #
-    Year           No           1970–2099         * / , -
+    Year           No           1970-2099         * / , -
 
 The Cron parser used is:
 

@@ -25,6 +25,7 @@ func Example_basic() {
 
 	// cron is in the form: Seconds, Minutes, Hours, Day of month, Month, Day of week, Year
 	// A cron of * * * * * * * will run every second.
+	// The scheduler uses UTC time
 	// Parsing cron using:
 	// https://github.com/gorhill/cronexpr
 
